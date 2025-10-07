@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import React, { useState } from 'react';
 import svgPaths from "../imports/svg-xf70tbd79z";
 import { Slider } from "./ui/slider";
 

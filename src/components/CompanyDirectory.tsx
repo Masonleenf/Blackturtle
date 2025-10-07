@@ -131,7 +131,7 @@ const CompanyDirectory = ({ onNavigateToCompany }: CompanyDirectoryProps) => {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-[32px] font-bold text-[#1A1E29] font-[Pretendard] tracking-[0.384px] mb-2">
-            투자대상 기업
+            투자대상 기업검색
           </h1>
           <p className="text-[16px] text-[#6F6C99] font-[Pretendard] tracking-[-0.28px]">
             NTIS 검증된 기술보유 기업 현황

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import HeroSection from './components/HeroSection';
+
 import KeyMetrics from './components/KeyMetrics';
 import ValueProposition from './components/ValueProposition';  
 import FeaturedCompanies from './components/FeaturedCompanies';
@@ -75,7 +75,7 @@ export default function App() {
             <TechnologyProfile 
               techId={selectedTechId || undefined}
               onNavigateBack={() => setCurrentPage('tech')}
-              onNavigateToCompany={() => setCurrentPage('companies')}
+              onNavigateToCompany={() => handleCompanyDetailNavigation('tech-innovation')}
             />
             <Footer onPageChange={handlePageChange} />
           </>
@@ -89,31 +89,7 @@ export default function App() {
         );
       case 'login':
         return <Login onNavigateBack={() => setCurrentPage('home')} onLogin={handleLogin} />;
-      case 'landing':
-        return (
-          <main>
-            {/* Hero Section with gradient background */}
-            <div className="bg-gradient-to-br from-[#A8D5DD] via-[#89CDD6] to-[#5FA8B4]">
-              <HeroSection onNavigateToCompanies={() => setCurrentPage('companies')} />
-            </div>
 
-            {/* Key Metrics Section */}
-            <div className="bg-gradient-to-br from-[#A8D5DD] via-[#89CDD6] to-[#5FA8B4]">
-              <KeyMetrics />
-            </div>
-
-            {/* Value Proposition Section */}
-            <ValueProposition />
-
-            {/* Featured Companies Section */}
-            <div className="bg-gradient-to-br from-[#A8D5DD] via-[#89CDD6] to-[#5FA8B4]">
-              <FeaturedCompanies />
-            </div>
-
-            {/* Footer */}
-            <Footer onPageChange={handlePageChange} />
-          </main>
-        );
       default:
         return <Dashboard onNavigateToLogin={() => setCurrentPage('login')} />;
     }

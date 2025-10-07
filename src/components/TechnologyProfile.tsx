@@ -39,7 +39,7 @@ const TechnologyProfile = ({ onNavigateBack, onNavigateToCompany, techId }: Tech
     name: "딥러닝 의료영상 진단 AI",
     category: "AI/머신러닝",
     description: "CT, MRI 영상을 실시간으로 분석하여 암세포를 95% 정확도로 검출하는 딥러닝 알고리즘",
-    icon: "🧠",
+    icon: "🧠", //category와 매칭
     bcRatio: "6.8x",
     rdInvestment: "₩45억",
     developmentPeriod: "2020-2024",
@@ -48,12 +48,12 @@ const TechnologyProfile = ({ onNavigateBack, onNavigateToCompany, techId }: Tech
     verificationOrg: "한국산업기술진흥원",
     company: {
       name: "테크이노베이션",
-      logo: "🏢",
+      logo: "🏢",  //고정, 모든기업 동일
       industry: "AI/머신러닝",
       location: "서울",
-      totalAssets: "285억원",
-      employees: "127명",
-      revenueGrowth: "+42%"
+      totalAssets: "285억원", //db에서는 숫자로
+      employees: "127명", //db에서는 숫자로
+      revenueGrowth: "+42%" //db에서는 숫자로
     },
     keyFeatures: [
       "실시간 의료영상 분석 (< 3초)",
@@ -61,89 +61,11 @@ const TechnologyProfile = ({ onNavigateBack, onNavigateToCompany, techId }: Tech
       "기존 시스템과 완벽 호환",
       "FDA 승인 획득",
       "다국어 지원 인터페이스"
-    ],
-    applications: [
-      { icon: "🏥", title: "종합병원", desc: "대용량 영상 진단" },
-      { icon: "🔬", title: "검진센터", desc: "정밀 검사 지원" },
-      { icon: "📱", title: "모바일 헬스", desc: "원격 진단 서비스" },
-      { icon: "🌐", title: "글로벌 헬스케어", desc: "해외 진출 확대" }
-    ],
-    expectedRevenue: "₩127억",
-    marketSize: "₩2.4조",
-    marketGrowth: "+18.5%",
-    competitionScore: "9.2/10",
-    timeline: [
-      { year: 2020, stage: "기초연구", description: "딥러닝 모델 개발", trl: 3, completed: true },
-      { year: 2021, stage: "프로토타입", description: "초기 알고리즘 구현", trl: 4, completed: true },
-      { year: 2022, stage: "파일럿", description: "임상시험 시작", trl: 6, completed: true },
-      { year: 2023, stage: "상용화", description: "제품 출시", trl: 7, completed: true },
-      { year: 2024, stage: "확산", description: "시장 확대", trl: 8, completed: true }
-    ],
-    specifications: [
-      { label: "기술분류", value: "인공지능 > 딥러닝 > 의료영상분석" },
-      { label: "TRL 단계", value: "8단계 (시범사업 완료)" },
-      { label: "특허 현황", value: "국내 3건, 국외 2건 등록" },
-      { label: "인증/수상", value: "FDA 승인, CES 혁신상 수상" },
-      { label: "개발기관", value: "테크이노베이션 AI연구소" },
-      { label: "연구책임자", value: "김박사 (KAIST 전자공학과)" }
-    ],
-    expectedOutcomes: [
-      {
-        icon: DollarSign,
-        title: "매출 성장",
-        description: "향후 3년간 연평균 35% 매출 증가 예상",
-        impact: "시장 규모 ₩2.4조 예상"
-      },
-      {
-        icon: TrendingUp,
-        title: "비용 절감",
-        description: "진단 시간 70% 단축으로 운영비 절감",
-        impact: "병원당 연간 ₩5억 절약"
-      },
-      {
-        icon: Globe,
-        title: "시장 확대",
-        description: "아시아 태평양 지역 진출 계획",
-        impact: "15개국 수출 목표"
-      },
-      {
-        icon: Award,
-        title: "특허 가치",
-        description: "핵심 특허 포트폴리오 구축",
-        impact: "특허 가치 ₩120억 추정"
-      }
-    ],
-    strengths: [
-      "검증된 높은 B/C 비율 (6.8x)",
-      "FDA 승인으로 글로벌 신뢰성 확보",
-      "강력한 시장 수요와 성장 잠재력",
-      "경쟁사 대비 우수한 기술 성능",
-      "안정적인 수익 모델 확립"
-    ],
-    considerations: [
-      "글로벌 경쟁 심화 가능성",
-      "규제 변화에 따른 리스크",
-      "대규모 투자 필요한 확장 단계",
-      "의료진 교육 및 적응 기간 필요"
-    ]
+    ], //NTIS API 등으로 기술 키팩터 가져오기
+
+
   }), [techId]);
 
-  // Performance projection data
-  const projectionData = useMemo(() => [
-    { year: 1, conservative: 15, expected: 25, optimistic: 40 },
-    { year: 2, conservative: 28, expected: 45, optimistic: 75 },
-    { year: 3, conservative: 42, expected: 70, optimistic: 115 },
-    { year: 4, conservative: 58, expected: 95, optimistic: 155 },
-    { year: 5, conservative: 75, expected: 125, optimistic: 200 }
-  ], []);
-
-  // Similar technologies data
-  const similarTechnologies = useMemo(() => [
-    { name: "AI 병리진단 시스템", bcRatio: "5.2x", trl: 7, status: "상용화" },
-    { name: "의료영상 분석 플랫폼", bcRatio: "4.8x", trl: 8, status: "확산" },
-    { name: "딥러닝 진단보조 도구", bcRatio: "6.1x", trl: 6, status: "임상시험" },
-    { name: "AI 방사선 판독 시스템", bcRatio: "3.9x", trl: 9, status: "상용화" }
-  ], []);
 
   const getTrlColor = useMemo(() => {
     return (level: number) => {
@@ -153,13 +75,6 @@ const TechnologyProfile = ({ onNavigateBack, onNavigateToCompany, techId }: Tech
     };
   }, []);
 
-  const tabs = [
-    { id: 'overview', label: '기술 상세', icon: Lightbulb },
-    { id: 'performance', label: '사업화 실적', icon: BarChart3 },
-    { id: 'patents', label: '특허 정보', icon: FileText },
-    { id: 'team', label: '연구진', icon: User },
-    { id: 'documents', label: '관련 문서', icon: FileText }
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -367,8 +282,8 @@ const TechnologyProfile = ({ onNavigateBack, onNavigateToCompany, techId }: Tech
                 </div>
               </div>
               
-              {/* Table Rows */}
-              <div className="divide-y divide-gray-100">
+              {/* Table Rows 아래 데이터도 전부 id에 종속된 데이터임 tech id -> 사업화 id */}
+              <div className="divide-y divide-gray-100"> 
                 <div className="px-6 py-4">
                   <div className="grid grid-cols-4 gap-4 items-center">
                     <div className="text-[16px] font-semibold text-[#141414] font-[Pretendard]">
@@ -460,7 +375,7 @@ const TechnologyProfile = ({ onNavigateBack, onNavigateToCompany, techId }: Tech
       </section>
 
 
-      {/* Similar Technologies */}
+      {/* Similar Technologies 아래 샘플 데이터는 category가 같은 다른 tech_id를 sql 필터해서 가져오는 거임 */}
       <section className="bg-[#F5F1E8] py-16">
         <div className="max-w-[1440px] mx-auto px-6">
           <div className="bg-white rounded-[20px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">

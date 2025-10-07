@@ -14,7 +14,7 @@ const TechnologyDirectory = ({ onNavigateToDetail }: TechnologyDirectoryProps) =
   // 샘플 기술 데이터
   const technologies = [
     {
-      id: "deep-learning-medical",
+      id: "deep-learning-medical",//기술 key
       name: "딥러닝 의료영상 진단 AI",
       category: "AI/머신러닝",
       company: "테크이노베이션",
@@ -22,7 +22,7 @@ const TechnologyDirectory = ({ onNavigateToDetail }: TechnologyDirectoryProps) =
       bcRatio: "6.8x",
       rdCost: "45억원",
       trlLevel: 8,
-      period: "2020-2024",
+      period: "2020-2024",//db에는 시작, 종료날짜 따로 입력된걸 flask api에서 저형태로 만들어서 보냄 string
       status: "verified",
       marketSize: "2,400억원",
       accuracy: "95%",

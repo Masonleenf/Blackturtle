@@ -138,14 +138,14 @@ const CompanyDetail = ({ companyId, onNavigateBack, onNavigateToTechnology }: Co
     {
       title: "시장규모",
       value: companyData.marketSize,
-      description: "TAM 기준", 
+      description: "데이터베이스 동종업계 총자산", 
       icon: BarChart3,
       color: "from-[#A8D5DD] to-[#5FA8B4]"
     },
     {
       title: "경쟁우위",
       value: companyData.competitivePosition,
-      description: "시장 내 위치",
+      description: "동종업계 중 총자산순위",
       icon: Award,
       color: "from-[#89CDD6] to-[#A8D5DD]"
     }
